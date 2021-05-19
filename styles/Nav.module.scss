@@ -1,0 +1,71 @@
+$primary: rgb(23, 22, 22);
+
+.nav {
+  min-height: 8vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    width: 50%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    a {
+      color: $primary;
+      text-transform: capitalize;
+    }
+
+    .active {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -10%;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $primary;
+      }
+    }
+
+    .linkHover {
+      position: relative;
+
+      &:hover::after {
+        content: "";
+        position: absolute;
+        bottom: -10%;
+        left: 0;
+        height: 2px;
+        background-color: $primary;
+        animation: linkborder 0.5s ease-in-out forwards;
+        -webkit-animation: linkborder 0.5s ease-in-out forwards;
+      }
+
+      @keyframes linkborder {
+        0% {
+          width: 0%;
+        }
+
+        100% {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    display: block;
+
+    .container {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
