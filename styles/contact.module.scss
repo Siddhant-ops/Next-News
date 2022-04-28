@@ -1,0 +1,27 @@
+$primary: rgb(23, 22, 22);
+$font-color: rgb(214, 214, 214);
+$orange: #ff6f4b;
+
+.container {
+  padding: 0 1rem 1rem;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+
+  .box {
+    z-index: 1;
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    height: 20vh;
+    width: 20vh;
+    background-color: $primary;
+    border-radius: 50%;
+    animation: zoom 3s ease forwards;
+    -webkit-animation: zoom 3s ease forwards;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+}
